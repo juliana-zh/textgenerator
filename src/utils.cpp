@@ -12,7 +12,7 @@ void tokenizeLine(const std::string &line, std::vector<Dict::ID_t>&vecIdTokens )
     icu::UnicodeString str(line.c_str());
     
     UErrorCode status = U_ZERO_ERROR;
-    RegexMatcher matcher("[а-яА-ЯЁёa-zA-Z0-9-]+|[,:;?!]+|[.{1}]", 0, status);
+    static RegexMatcher matcher("[а-яА-ЯЁёa-zA-Z0-9-]+|[,:;?!]+|[.{1}]", 0, status);
     matcher.reset(str);
     
     int64_t startIndex = 0;

@@ -16,7 +16,13 @@ struct Options
     boost::filesystem::path fname;  // входной файл для обработки
     size_t nTokens;                 // количество требуемых токенов
 };
-    
+
+/**
+ * Главный обработчик текста
+ * @param opt   - cтруктура для опций командной строки
+ */
+void mainBuilder(const Options &opt);
+
 /**
  * Сгенерировать предложение по данной модели
  * @param model   - биграммная модель
@@ -35,16 +41,10 @@ void createSentence ( BGR::BigramModel &model
  */
 void createText ( BGR::BigramModel &model                
                 , size_t nTokensText
-                , std::ostream &os);    
-
-/**
- * Главный обработчик текста
- * @param opt   - cтруктура для опций командной строки  
- */
-void mainBuilder(const Options &opt);
+                , std::ostream &os);
        
 /**
- * Добавить точку в конец предложения
+ * Добавить токен точки в конец текста
  * @param vecIdTokens - вектор из id токенов
  */
 void addDot(std::vector<Dict::ID_t> &vecIdTokens);
