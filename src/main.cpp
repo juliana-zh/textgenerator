@@ -32,7 +32,7 @@ int main(int argc, char **argv)
             po::notify(vm); 
                             
         } 
-        catch(po::error& e) 
+        catch(const po::error& e)
         { 
             std::cerr << "ERROR_IN_COMMAND_LINE: " << e.what() << std::endl << std::endl; 
             std::cerr << desc << std::endl; 
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
         {
              Gen::mainBuilder(opt); 
         }
-        catch(std::exception &e)
+        catch(const std::exception &e)
         {
             std::cerr << "ERROR: " << e.what() << std::endl << std::endl; 
             return EXIT_FAILURE;
