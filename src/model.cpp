@@ -30,8 +30,6 @@ void BigramModel::countElements()
         checkId(bigr.curId);
         
         ++countToken[bigr.prevId];
-        ++countToken[bigr.curId];
-        
         ++countBigram[bigr];
     }    
 }
