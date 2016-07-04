@@ -49,5 +49,4 @@ target_link_libraries( utest
       ${Boost_LIBRARIES} 
       ${ICU_LIBRARIES}
       )
-      
-install(TARGETS textGenerator RUNTIME DESTINATION bin)
+
