@@ -40,7 +40,7 @@ ID_t Dictionary::pushToken(const Token_t &inputToken)
     Token_t token(inputToken);
     token.toLower();  
       
-    const auto &itToken = tokenToId.find(token);
+    auto itToken = tokenToId.find(token);
     
     if (itToken != tokenToId.end())
     {        
