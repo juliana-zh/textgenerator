@@ -12,7 +12,7 @@ ID_t Dictionary::getID(const Token_t &token) const
     Token_t localToken(token);
     localToken.toLower();
     
-    const auto &itToken = tokenToId.find(localToken);
+    auto itToken = tokenToId.find(localToken);
     
     if (itToken == tokenToId.end())
     {
